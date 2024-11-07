@@ -8,6 +8,17 @@
     android:background="@color/cyan"
     tools:context=".ListProductActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/_30sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/_50dp"
+        android:layout_height="wrap_content"
+        android:text="@string/str_list_product_activity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_go_to_detail"/>
+
     <Button
         android:id="@+id/btn_go_to_detail"
         android:layout_width="wrap_content"

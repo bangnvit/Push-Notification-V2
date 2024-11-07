@@ -5,6 +5,9 @@
     <string name="str_send_notification">Send Notification</string>
     <string name="str_go_to_list_product">Go To List Product</string>
     <string name="str_go_to_detail">Go To Detail</string>
+    <string name="str_main_activity">Main Activity</string>
+    <string name="str_list_product_activity">List Product Activity</string>
+    <string name="str_detail_activity">Detail Activity</string>
 
     <string name="channel_name_channel_1">Channel 1</string>
     <string name="channel_description_channel_1">This is Channel 1</string>

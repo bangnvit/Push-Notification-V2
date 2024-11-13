@@ -2,8 +2,10 @@ package com.bangnv.pushnotificationv2
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.bangnv.pushnotificationv2.databinding.ActivityListProductBinding
+import com.bangnv.pushnotificationv2.utils.applyWindowInsets
 
 class ListProductActivity : AppCompatActivity() {
 
@@ -11,7 +13,9 @@ class ListProductActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         initializeBinding()
+        applyWindowInsets()
         setupClickListener()
     }
 
@@ -20,9 +24,17 @@ class ListProductActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
+    private fun applyWindowInsets() {
+        binding.root.applyWindowInsets()
+    }
+
     private fun setupClickListener() {
         binding.btnGoToDetail.setOnClickListener {
-            startActivity(Intent(this, DetailActivity::class.java))
+            navigateToDetail()
         }
+    }
+
+    private fun navigateToDetail() {
+        startActivity(Intent(this, DetailActivity::class.java))
     }
 }

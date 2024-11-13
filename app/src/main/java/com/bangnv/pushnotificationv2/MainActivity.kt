@@ -11,11 +11,13 @@ import android.media.RingtoneManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.bangnv.pushnotificationv2.databinding.ActivityMainBinding
+import com.bangnv.pushnotificationv2.utils.applyWindowInsets
 import com.bangnv.pushnotificationv2.utils.showToastLong
 import com.bangnv.pushnotificationv2.utils.showToastShort
 import java.util.Date
@@ -30,13 +32,19 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         initializeBinding()
+        applyWindowInsets()
         setupClickListener()
     }
 
     private fun initializeBinding() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+    }
+
+    private fun applyWindowInsets() {
+        binding.root.applyWindowInsets()
     }
 
     private fun setupClickListener() {

@@ -48,12 +48,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupClickListener() {
+        binding.btnGoToListProduct.setOnClickListener {
+            navigateToListProduct()
+        }
         binding.btnSendNotification.setOnClickListener {
             sendNotificationIfPermitted()
         }
-        binding.btnGoToListProduct.setOnClickListener {
-            startActivity(Intent(this, ListProductActivity::class.java))
-        }
+    }
+
+    private fun navigateToListProduct() {
+        startActivity(Intent(this, ListProductActivity::class.java))
     }
 
     private fun sendNotificationIfPermitted() {
